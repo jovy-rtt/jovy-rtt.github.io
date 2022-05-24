@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"jvdtlUxJ83npxCeBI47ou4xi-gzGzoHsz","app_key":"rj81Yvvgtwv3kABj9eq2rjA7","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"jvdtlUxJ83npxCeBI47ou4xi-gzGzoHsz","app_key":"rj81Yvvgtwv3kABj9eq2rjA7","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -238,14 +238,6 @@
 
   
   
-    
-      <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="leancloud-page-views"></span> 次
-      </span>
-    
-  
 </div>
 
             
@@ -308,21 +300,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/22/5G%E6%A0%B8%E5%BF%83%E7%BD%91-Identifiers%E8%BA%AB%E4%BB%BD%E6%A0%87%E8%AF%86/">
+                      <a href="/2022/05/05/hello-world/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">5GC核心网 Identifiers身份标识</span>
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/05/05/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -336,21 +322,19 @@
                   
                 
                 
-  <div id="valine"></div>
+  <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
-          {"appId":"jvdtlUxJ83npxCeBI47ou4xi-gzGzoHsz","appKey":"rj81Yvvgtwv3kABj9eq2rjA7","path":"window.location.pathname","placeholder":"留言仅限讨论~","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {"clientID":"5472d7cafba008b59952","clientSecret":"c69849369031690e0b9dd212ade99c942026301b","repo":"https://github.com/jovy-rtt/MyComment","owner":"jovy-rtt","admin":["jovy-rtt"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            el: "#valine",
-            path: window.location.pathname
+            id: '251d49497a1e0c90bf548be8e3252949'
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
-        })
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
       });
     });
   </script>
@@ -418,31 +402,6 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- LeanCloud 统计PV -->
-        <span id="leancloud-site-pv-container" style="display: none">
-            总访问量 
-            <span id="leancloud-site-pv"></span>
-             次
-          </span>
-      
-      
-        <!-- LeanCloud 统计UV -->
-        <span id="leancloud-site-uv-container" style="display: none">
-            总访客数 
-            <span id="leancloud-site-uv"></span>
-             人
-          </span>
-      
-
-    
-  </div>
-
 
   
 
@@ -502,8 +461,6 @@
 
 
 
-  <script defer src="/js/leancloud.js" ></script>
-
 
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
@@ -526,19 +483,6 @@
 
 
 
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 
 
