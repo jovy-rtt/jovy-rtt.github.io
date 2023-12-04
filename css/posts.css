@@ -1,0 +1,37 @@
+
+.banner {
+    background-color: #6190ff;
+    /* background: url(../img/top-texture-2.webp) repeat; */
+    /* background-size: auto 150%; */
+    /* opacity: .05 */
+}
+
+.banner:before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: url(../img/top-texture-2.webp) repeat;
+    background-size: auto ;
+    opacity: 0.05
+}
+
+/* background: url(&quot;/img/default.png&quot;) center center / cover no-repeat; transform: translate3d(0px, 0px, 0px); */
+
+/* 插入小老虎 */
+#board:before {
+    display: block;
+    position: absolute;
+    top: -270px;
+    margin-top: 3.1rem;
+    height: 270px;
+    width: 100%;
+    content: ""; /* No delete */
+    background: url(../img/top-animal-1.webp) no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    z-index: 1000;
+}
+

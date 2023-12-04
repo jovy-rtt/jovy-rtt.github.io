@@ -1,0 +1,73 @@
+
+.banner {
+  background-color: #ccc;
+  /* background: url(../img/top-texture-2.webp) repeat; */
+  /* background-size: auto 150%; */
+  /* opacity: .05 */
+}
+
+.fade-in-up {
+  z-index: 2;
+  position: relative;
+  left: 4vw;
+  top: 30px;
+}
+
+.fade-in-up .h2{
+  font-weight: bold;
+}
+
+.banner:before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: url(../img/archives_bg.png) repeat;
+  background-size: auto 50%;
+}
+
+/* background: url(&quot;/img/default.png&quot;) center center / cover no-repeat; transform: translate3d(0px, 0px, 0px); */
+
+/* 插入小狗公告板 */
+.banner:after {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 2rem;
+  height: 270px;
+  width: 100%;
+  content: ""; /* No delete */
+  background: url(../img/archives.png) no-repeat;
+  background-size: auto 100%;
+  background-position: bottom;
+  z-index: 1;
+}
+
+
+/* 插入公告板上的文字 */
+.bulletin-board {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.bulletin-board-ul {
+  list-style: none;
+  padding: 0 50px 0 40px;
+}
+
+.bulletin-board-li {
+  display: flex;
+  border-top: 2px solid #ddd;
+  height: 56px;
+  font-size: 18px;
+  align-items: center;
+}
+
+.bulletin-board-li:last-child {
+  border-bottom: 2px solid #ddd ;
+}
+
+.bulletin-board-li-p {
+  margin: 0;
+}
